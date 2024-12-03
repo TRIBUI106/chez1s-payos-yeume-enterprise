@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Link thanh toán</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-box">
+        <div class="checkout">
+            <div class="product">
+                <p><strong>Tên sản phẩm:</strong> Sinh tố dâu</p>
+                <p><strong>Giá tiền:</strong> 23.000 VNĐ</p>
+                <p><strong>Số lượng:</strong> 1</p>
+            </div>
+            <form action="/create-payment-link" method="post">
+                <button type="submit" id="create-payment-link-btn">Tạo Link thanh toán</button>
+            </form>
+        </div>
+        <div class="checkout">
+            <div class="product">
+                <p><strong>Tên sản phẩm:</strong> Nước cam</p>
+                <p><strong>Giá tiền:</strong> 12.000 VNĐ</p>
+                <p><strong>Số lượng:</strong> 1</p>
+            </div>
+            <form action="/create-payment-link2" method="post">
+                <button type="submit" id="create-payment-link-btn">Tạo Link thanh toán</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
