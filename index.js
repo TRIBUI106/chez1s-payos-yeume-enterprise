@@ -53,6 +53,25 @@ app.post('/create-payment-link2', async (req, res) => {
     }
 });
 
+app.post('/create-demoPayment', async (req, res) => {
+    const YOUR_DOMAIN = 'http://localhost:3030';
+    const body = {
+        orderCode: Number(String(Date.now()).slice(-6)),
+        amount: 2000,
+        description: 'Test chuyen khoan PayOS',
+        returnUrl: `${YOUR_DOMAIN}/success.html`,
+        cancelUrl: `${YOUR_DOMAIN}/cancel.html`
+    };
+
+    try {
+        const paymentLinkResponse = await payOS.createPaymentLink(body);
+        res.redirect(paymentLinkResponse.checkoutUrl);  
+    } catch (error) {
+        console.error(error);
+        res.send('Something went error');
+    }
+});
+
 app.listen(PORT, function () {
     console.log(`Server is listening on port ${PORT}`);
 });
